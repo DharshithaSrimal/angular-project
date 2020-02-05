@@ -6,6 +6,8 @@ import { defineBase } from '@angular/core/src/render3';
 import {AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
+import { Chart } from 'chart.js';
+
 
 
 export interface Reading { name: string; price: number; }

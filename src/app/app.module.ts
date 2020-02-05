@@ -21,6 +21,8 @@ import {AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fires
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 
+//import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
     LoadingPageModule, MaterialBarModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    //ChartsModule
   ],
   providers: [AngularFirestore],
   declarations: [
