@@ -17,8 +17,9 @@ import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-
-
+import {AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 
 @NgModule({
   imports: [
@@ -28,8 +29,10 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     LayoutModule.forRoot(adminLteConf),
     LoadingPageModule, MaterialBarModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
+  providers: [AngularFirestore],
   declarations: [
     AppComponent,
     HomeComponent

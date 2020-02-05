@@ -5,14 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCkuKFJCL22oYsOD02XmOlzPMIfQkFtbZM",
-    authDomain: "water-leak-b3b7e.firebaseapp.com",
-    databaseURL: "https://water-leak-b3b7e.firebaseio.com",
-    projectId: "water-leak-b3b7e",
-    storageBucket: "water-leak-b3b7e.appspot.com",
-    messagingSenderId: "941754511029",
-    appId: "1:941754511029:web:5a7cc4ebe9015a63de18fc",
-    measurementId: "G-PYSK3EDY2Z"
+    apiKey: "AIzaSyChhFJG4dWdV-05KkrcfQPNDGGc6jHdCLA",
+    authDomain: "firestorewaterleak.firebaseapp.com",
+    databaseURL: "https://firestorewaterleak.firebaseio.com",
+    projectId: "firestorewaterleak",
+    storageBucket: "firestorewaterleak.appspot.com",
+    messagingSenderId: "96447604440",
+    appId: "1:96447604440:web:f9a539cb3118b42a2ed9ad",
+    measurementId: "G-22PSZJ4Z9W"
   }
 };
 

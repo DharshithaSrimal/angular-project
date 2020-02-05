@@ -26,7 +26,12 @@
       <mk-layout-footer-left>
         <strong>Powered by <a href="http://almsaeedstudio.com"></a>.</strong>
         <div>
-          <pre *ngFor="let item of items | async">{{item}}</pre>
+          <!--<pre *ngFor="let item of items | async">{{item}}</pre>-->
+          <ul>
+            <li *ngFor="let shirt of shirts | async">
+              {{ shirt.flow1 }}
+            </li>
+          </ul>
         </div>
       </mk-layout-footer-left>
       <mk-layout-footer-right>
