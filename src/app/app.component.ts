@@ -8,8 +8,8 @@ import {AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fires
 
 
 
-export interface Shirt { name: string; price: number; }
-export interface ShirtId extends Shirt { id: string; }
+export interface Reading { name: string; price: number; }
+export interface ReadingId extends Reading { id: string; }
 
 
 
@@ -18,16 +18,18 @@ export interface ShirtId extends Shirt { id: string; }
   templateUrl: './app.component.html'
 })
 export class AppComponent{
-  private shirtCollection: AngularFirestoreCollection<Shirt>;
-  shirts: Observable<ShirtId[]>;
+  private readingCollection: AngularFirestoreCollection<Reading>;
+  readings: Observable<ReadingId[]>;
+
+
   constructor(private readonly afs: AngularFirestore) {
-    this.shirtCollection = afs.collection<Shirt>('/aaa');
+    this.readingCollection = afs.collection<Reading>('/aaa');
     // .snapshotChanges() returns a DocumentChangeAction[], which contains
     // a lot of information about "what happened" with each change. If you want to
     // get the data and the id use the map operator.
-    this.shirts = this.shirtCollection.snapshotChanges().pipe(
+    this.readings = this.readingCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as Shirt;
+        const data = a.payload.doc.data() as Reading;
         const id = a.payload.doc.id;
         return { id, ...data };
       }))

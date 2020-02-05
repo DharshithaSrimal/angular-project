@@ -2,9 +2,31 @@
   <p>Description</p>
 </mk-box>
 
-<mk-box header="Download" [isCollapsable]="false" [isRemovable]="false">
-  <p>Angular Admin LTE is available at npm, if you have an existing application run the following command to download it to your project.</p>
-  <p>Angular Admin LTE is distributed in commonjs format, a module manager of your choice is required.</p>
+<mk-box header="Current Status" [isCollapsable]="false" [isRemovable]="false">
+  <div class="col-md-4">
+    <div>Area1</div>
+    <ul>
+      <li *ngFor="let reading of readings | async">
+        {{ reading.flow1 }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <div>Area2</div>
+    <ul>
+      <li *ngFor="let reading of readings | async">
+        {{ reading.flow2 }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4">
+    <div>Area3</div>
+    <ul>
+      <li *ngFor="let reading of readings | async">
+        {{ reading.flow3 }}
+      </li>
+    </ul>
+  </div>
   <pre><code class="language-bash">npm install angular-admin-lte --save</code></pre>
 </mk-box>
 
