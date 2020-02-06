@@ -34,7 +34,7 @@ export class HomeComponent implements AfterViewInit {
   f1: AngularFireObject<any>;
   chart: any;
   text: any;
-  bgColor: any;
+  bc: boolean = false;
   
 
   calculation(string1,string2, string3) {
@@ -42,12 +42,13 @@ export class HomeComponent implements AfterViewInit {
    if(this.leak > 2 ){
      this.leak = Math.abs(this.leak);
      this.text = "LEAK DETECTED";
-     this.bgColor ="#ff0000";
+     this.bc =true;
     }
     else{
       this.leak = 0;
-      this.text = "NO LEAK";
-      this.bgColor ="#ff0000";
+      this.text = "NO LEAK DETECTED"
+      this.bc = false;
+    
     }
     return Math.round( this.leak );
   }
