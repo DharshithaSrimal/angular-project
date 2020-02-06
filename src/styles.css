@@ -8,3 +8,10 @@
 .table-bordered > tfoot > tr > td {
   border-color: #eae3e3;
 }
+ul{
+  list-style: none;
+  text-align: center;
+}
+.area{
+  text-align: center;
+}

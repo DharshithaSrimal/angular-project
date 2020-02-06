@@ -33,6 +33,7 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
+    AngularFireDatabaseModule,
     //ChartsModule
   ],
   providers: [AngularFirestore],

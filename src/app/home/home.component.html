@@ -3,31 +3,38 @@
 </mk-box>
 
 <mk-box header="Current Status" [isCollapsable]="false" [isRemovable]="false">
-  <div class="col-md-4">
-    <div>Area1</div>
-    <ul>
-      <li *ngFor="let reading of readings | async">
-        {{ reading.flow1 }}
+  <div class="col-md-3">
+    <div class="area">Area 1</div>
+   <ul>
+      <li *ngFor="let item of items | async">
+        {{ item.flow1 }}
       </li>
     </ul>
   </div>
-  <div class="col-md-4">
-    <div>Area2</div>
+  <div class="col-md-3">
+    <div class="area">Area 2</div>
     <ul>
-      <li *ngFor="let reading of readings | async">
-        {{ reading.flow2 }}
+      <li *ngFor="let item of items | async">
+        {{ item.flow2 }}
       </li>
     </ul>
   </div>
-  <div class="col-md-4">
-    <div>Area3</div>
+  <div class="col-md-3">
+    <div class="area">Area 3</div>
     <ul>
-      <li *ngFor="let reading of readings | async">
-        {{ reading.flow3 }}
+      <li *ngFor="let item of items | async">
+        {{ item.flow3 }}
       </li>
     </ul>
   </div>
-  <pre><code class="language-bash">npm install angular-admin-lte --save</code></pre>
+  <div class="col-md-3">
+    <div class="area">Leak</div>
+    <ul>
+      <li *ngFor="let item of items | async">
+        {{ calculation(item.flow1, item.flow2, item.flow3) }}
+      </li>
+    </ul>
+  </div>
 </mk-box>
 
 <mk-box header="Import" [isCollapsable]="false" [isRemovable]="false">
