@@ -32,14 +32,22 @@ export class HomeComponent implements AfterViewInit {
   items: Observable<any[]>;
   leak: any;
   f1: AngularFireObject<any>;
+  chart: any;
+  text: any;
+  bgColor: any;
+  
 
   calculation(string1,string2, string3) {
     this.leak = parseFloat(string1) - ( parseFloat(string2) + parseFloat(string3));
    if(this.leak > 2 ){
      this.leak = Math.abs(this.leak);
+     this.text = "LEAK DETECTED";
+     this.bgColor ="#ff0000";
     }
     else{
       this.leak = 0;
+      this.text = "NO LEAK";
+      this.bgColor ="#ff0000";
     }
     return Math.round( this.leak );
   }
@@ -73,6 +81,43 @@ export class HomeComponent implements AfterViewInit {
     //);
   //});
 //});
+
+this.chart = new Chart('canva', {
+  type: 'line',
+data: {
+    labels: ['6', '12', '18', '24', '30', '36', '42', '48', '54', '60'],
+    datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+        ],
+        borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+        ],
+        borderWidth: 1
+    }]
+},
+options: {
+  scales: {
+      yAxes: [{
+          ticks: {
+              beginAtZero: true
+          }
+      }]
+  }
+}
+});
   }
   
 }

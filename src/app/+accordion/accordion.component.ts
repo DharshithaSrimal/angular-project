@@ -1,4 +1,6 @@
 import {Component, AfterViewInit, NgZone, ChangeDetectorRef, ViewRef} from '@angular/core';
+import { Observable } from 'rxjs';
+import { AngularFireDatabase, AngularFireObject } from '@angular/fire/database';
 
 import * as Prism from 'prismjs';
 import { Chart } from 'chart.js';
@@ -8,6 +10,8 @@ import { Chart } from 'chart.js';
   templateUrl: './accordion.component.html',
   styleUrls: ['./accordion.component.css']
 })
+
+
 export class AccordionComponent implements AfterViewInit {
   public activeIndex: any = 0;
   chart: any;
@@ -24,6 +28,8 @@ export class AccordionComponent implements AfterViewInit {
   /**
    * @method ngAfterViewInit
    */
+
+  items: Observable<any[]>;
   ngAfterViewInit() {
     Prism.highlightAll();
 
