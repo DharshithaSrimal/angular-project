@@ -1,46 +1,18 @@
-import { environment } from '../environments/environment';
-
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { adminLteConf } from './admin-lte.conf';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
-import { CoreModule } from './core/core.module';
-
-import { LayoutModule } from 'angular-admin-lte';
-
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-
-import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
-
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import {AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireStorageModule} from '@angular/fire/storage';
-
-//import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    LayoutModule.forRoot(adminLteConf),
-    LoadingPageModule, MaterialBarModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
-    //ChartsModule
+    AppRoutingModule
   ],
-  providers: [AngularFirestore],
-  declarations: [
-    AppComponent,
-    HomeComponent
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
